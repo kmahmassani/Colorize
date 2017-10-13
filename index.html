@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Rainbow Paragraph</title>
+	<meta name="description" content="Rainbow Paragraph">
+	<meta name="author" content="Kamal Mahmassani">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+	 crossorigin="anonymous">
+	<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<label for="txtColors">Colors</label>
+		<textarea rows="5" id="txtColors" class="form-control" aria-describedby="colorsHelp" required></textarea>
+		<small id="helpBlock" class="form-text text-muted">Colors may by comma, semi-colon or new line seperated</small>
+		<div class="invalid-feedback">
+			Please provide valid colors.
+		</div>
+		<button type="button" class="btn btn-primary" id="btnColorize" onclick="doColorize()">Colorize!</button>
+		<blockquote class="blockquote">
+			<span class="mb-0" id="pText"></span>
+		</blockquote>
+	</div>
+	<script>
+		document.getElementById("txtColors")
+			.addEventListener("keyup", function (event) {
+				event.preventDefault();
+				if (event.keyCode == 13) {
+					doColorize();
+				}
+			});
+	</script>
+	<script src="js/colorize.js"></script>
+</body>
+
+</html>
